@@ -10,10 +10,13 @@
     "dialect": "postgres"
   },
   "production": {
-    "use_env_variable": "PROD_DB_URL",
-    "host": "127.0.0.1",
+    "host": "db.aidjvjwolqxzprxvfkzn.supabase.co",
+    "database": "postgres",
+    "username": "postgres",
+    "password": "BAM9ajjd8TvfQmTn",
     "dialect": "postgres"
   },
   "seederStorage": "sequelize",
   "seederStorageTableName": "SequelizeData"
 }
+

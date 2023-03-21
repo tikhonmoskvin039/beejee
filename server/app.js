@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 require("@babel/register");
-const morgan = require("morgan");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
@@ -21,7 +20,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.static(path.resolve("public")));
-app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -34,6 +32,7 @@ const sessionConfig = {
   cookie: {
     secure: process.env.NODE_ENV === "production",
     maxAge: 1000 * 60 * 60 * 24 * 10,
+    httpOnly: true,
   },
 };
 

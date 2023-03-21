@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
+    "build": "webpack -d eval-source-map && babel src --copy-files --out-dir distr",
     "dev": "nodemon app.js --ignore session --ext js,jsx,json",
     "test": "jest",
     "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
@@ -23,7 +24,6 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
-    "morgan": "^1.10.0",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.29.3",
